@@ -1,4 +1,4 @@
-
+from utils import *
 questions = {
  "Who created Python?: ": "A",
  "What year was Python created?: ": "B",
