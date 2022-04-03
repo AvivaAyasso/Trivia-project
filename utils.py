@@ -1,4 +1,5 @@
 #------------------------
+from part1 import options,questions
 def new_game():
 
     guesses = []
@@ -15,7 +16,9 @@ def new_game():
         guesses.append(guess)
 
         correct_guesses += check_answer(questions.get(key), guess)
+        question_num += 1
 
+    display_score(correct_guesses, guesses)
 
 #------------------------
 def check_answer(answer, guess):
@@ -46,13 +49,12 @@ def display_score(correct_guesses, guesses):
     print("Your score is: " + str(score) + "%")
 #------------------------
 def play_again():
-    def play_again():
 
-        response = input("Do you want to play again? (yes or no): ")
-        response = response.upper()
+    response = input("Do you want to play again? (yes or no): ")
+    response = response.upper()
 
-        if response == "YES":
-            return True
-        else:
-            return False
+    if response == "YES":
+        return True
+    else:
+        return False
 
