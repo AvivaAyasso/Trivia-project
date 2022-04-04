@@ -1,8 +1,8 @@
 #------------------------
 from questions import *
 
-def new_game():
 
+def new_game():
 
     correct_guesses = 0
     question_num = 1
@@ -43,12 +43,11 @@ def display_score(correct_guesses):
     print("RESULTS")
     print("-------------------------")
 
-
     score = int((correct_guesses * (100/10)))
     print("Your Total score is: " + str(score))
+
+
 #------------------------
-
-
 def play_again():
 
     response = input("Do you want to play again? (yes or no): ")
@@ -58,7 +57,6 @@ def play_again():
         return True
     else:
         return False
-
 
 
 new_game()
