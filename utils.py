@@ -1,5 +1,5 @@
 #------------------------
-from part1 import *
+from questions import *
 
 def new_game():
 
@@ -15,7 +15,6 @@ def new_game():
             print(i)
         guess = input("Enter (A, B, C, or D): ")
         guess = guess.upper()
-
 
         correct_guesses += check_answer(questions1.get(key), guess)
         if question_num == 10 and check_answer(questions1.get(key), guess) == 1:
