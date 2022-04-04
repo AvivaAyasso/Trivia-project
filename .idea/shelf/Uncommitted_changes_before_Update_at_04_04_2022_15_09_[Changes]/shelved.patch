@@ -1,0 +1,32 @@
+Index: utils.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#------------------------\r\n\r\n\r\ndef new_game():\r\n\r\n\r\n    correct_guesses = 0\r\n    question_num = 1\r\n\r\n    print(\"Welcome to the game, have fan!!!\")\r\n    for key in questions1.keys():\r\n        print(\"-------------------------\")\r\n        print(key)\r\n        for i in options1[question_num - 1]:\r\n            print(i)\r\n        guess = input(\"Enter (A, B, C, or D): \")\r\n        guess = guess.upper()\r\n\r\n\r\n        correct_guesses += check_answer(questions1.get(key), guess)\r\n        if question_num == 10 and check_answer(questions1.get(key), guess) == 1:\r\n            correct_guesses += 1\r\n        if question_num % 3 == 0:\r\n            print(\"your score is :\", round(correct_guesses* (100/10)))\r\n        question_num += 1\r\n\r\n    display_score(correct_guesses)\r\n\r\n\r\n#------------------------\r\ndef check_answer(answer, guess):\r\n\r\n    if answer == guess:\r\n        print(\"CORRECT!\")\r\n        return 1\r\n    else:\r\n        print(\"WRONG!\")\r\n        return 0\r\n\r\n\r\n#------------------------\r\ndef display_score(correct_guesses):\r\n    print(\"-------------------------\")\r\n    print(\"RESULTS\")\r\n    print(\"-------------------------\")\r\n\r\n\r\n    score = int((correct_guesses * (100/10)))\r\n    print(\"Your Total score is: \" + str(score))\r\n#------------------------\r\n\r\n\r\ndef play_again():\r\n\r\n    response = input(\"Do you want to play again? (yes or no): \")\r\n    response = response.upper()\r\n\r\n    if response == \"YES\":\r\n        return True\r\n    else:\r\n        return False\r\n\r\n\r\nquestions1 = {\"Who created Python?: \": \"A\",\r\n              \"What year was Python created?: \": \"B\",\r\n              \"Python is tributed to which comedy group?: \": \"C\",\r\n              \"What is the correct file extention for python files?\": \"B\",\r\n              \"Which operators is used to multiply?\": \"B\",\r\n              \"Which collection is ordered, changeable, and allows duplicate numbers?\": \"A\",\r\n              \"Which statment is used to stop a loop? \": \"A\",\r\n              \"What is 'init' mean? \": \"D\",\r\n              \"What year Betty was barn\": \"B\",\r\n              \"What year Aviva was barn\": \"C\"\r\n\r\n}\r\n\r\n\r\noptions1 = [\r\n    [\"A. Guido van Rossum\", \"B. Aviva Ayasso\", \"C. Bill Gates\", \"D. Mark Zuckerburg\"],\r\n    [\"A. 1989\", \"B. 1991\", \"C. 2000\", \"D. 2022\"],\r\n    [\"A. Lonely Island\", \"B. Smosh\", \"C. Monty Python\", \"D. SNL\"],\r\n    [\"A. '.pyt'\", \"B. '.py'\", \"C. '.pt'\", \"D. '.pyth'\"],\r\n    [\"A. #\", \"B. *\", \"C. +\", \"D. x\"],\r\n    [\"A. List\", \"B. Dictionary\", \"C. Tuple\", \"D. Set\"],\r\n    [\"A. break\", \"B. exit\", \"C. stop\", \"D. return\"],\r\n    [\"A. Meaningless name\", \"B. All answers are correct\", \"C. Object\", \"D. constructor\"],\r\n    [\"A. 1989\", \"B. 1999\", \"C. 2000\", \"D. 2002\"],\r\n    [\"A. 1989\", \"B. 2000\", \"C. 1991\", \"D. 2005\"]\r\n\r\n    ]\r\n\r\n\r\nnew_game()\r\n\r\nwhile play_again():\r\n    new_game()\r\n\r\n\r\nprint(\"Byeeeeee!\")\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/utils.py b/utils.py
+--- a/utils.py	(revision 30a74da4604e005fb26bf0e96a83d9821718a993)
++++ b/utils.py	(date 1649066200820)
+@@ -21,9 +21,13 @@
+         if question_num == 10 and check_answer(questions1.get(key), guess) == 1:
+             correct_guesses += 1
+         if question_num % 3 == 0:
++            print("-----------------------")
+             print("your score is :", round(correct_guesses* (100/10)))
++            print("-----------------------")
++            print("Continue to the next round")
+         question_num += 1
+ 
++
+     display_score(correct_guesses)
+ 
+ 
+@@ -47,6 +51,7 @@
+ 
+     score = int((correct_guesses * (100/10)))
+     print("Your Total score is: " + str(score))
++
+ #------------------------
+ 
+ 
